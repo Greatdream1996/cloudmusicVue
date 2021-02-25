@@ -1,15 +1,14 @@
 import axios from 'axios'
-const $http = axios.create({
-  baseURL: 'http://localhost:3000'
+
+const instance = axios.create({
+  baseURL: 'http://localhost:3000',
+  timeout: 1000
 })
-export default function Request() {
-  console.log(1)
-  $http.get('/login/cellphone', {
-    params: {
-      phone: 12345,
-      password: 132465
-    }
-  }).then(function(res) {
-    console.log(res)
+export default function request (url, data) {
+  console.log(data)
+  instance.get(url, {
+    params: data
+  }).then(res => {
+    return res.data
   })
 }

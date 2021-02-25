@@ -42,11 +42,12 @@
 </template>
 
 <script>
-import LoginRequest from '@/request/Request'
+// import request from '@/request/Request'
 export default {
-  mounted: function () {
-    LoginRequest()
-  },
+  // mounted: function () {
+  //   const a = request('/login/cellphone', { phone: 123, password: 123 })
+  //   console.log(a)
+  // },
   data () {
     return {
       form: {
@@ -54,9 +55,7 @@ export default {
         password: ''
       },
       rules: {
-        username: [
-          { required: true, message: '请输入账号', trigger: 'blur' }
-        ],
+        username: [{ required: true, message: '请输入账号', trigger: 'blur' }],
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
           { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
