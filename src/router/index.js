@@ -9,7 +9,6 @@ const routes = [{
   name: 'Login',
   component: Home
 }]
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,

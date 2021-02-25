@@ -12,7 +12,9 @@ import {
   Row,
   Input,
   Menu,
-  MenuItem
+  MenuItem,
+  Form,
+  FormItem
 } from 'element-ui'
 Vue.use(Button)
 Vue.use(Select)
@@ -27,3 +29,5 @@ Vue.use(Row)
 Vue.use(Input)
 Vue.use(Menu)
 Vue.use(MenuItem)
+Vue.use(Form)
+Vue.use(FormItem)

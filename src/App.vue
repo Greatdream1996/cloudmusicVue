@@ -15,7 +15,9 @@
         <Aside/>
       </el-aside>
       <el-container class="body">
-        <el-main>Main</el-main>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
     <el-container class="footer">
