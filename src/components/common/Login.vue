@@ -6,7 +6,7 @@
         alt=""
       >
       <el-form
-        ref="form"
+        ref="FormRef"
         :model="form"
         :rules="rules"
         label-width="80px"
@@ -30,6 +30,7 @@
           <el-button
             type="danger"
             round
+            @click="loginto"
           >登陆</el-button>
           <el-button
             type="danger"
@@ -42,25 +43,47 @@
 </template>
 
 <script>
-// import request from '@/request/Request'
+
 export default {
-  // mounted: function () {
-  //   const a = request('/login/cellphone', { phone: 123, password: 123 })
-  //   console.log(a)
-  // },
   data () {
     return {
       form: {
-        username: '',
-        password: ''
+        username: '12321313',
+        password: '123412'
       },
       rules: {
-        username: [{ required: true, message: '请输入账号', trigger: 'blur' }],
+        username: [
+          { required: true, message: '请输入账号', trigger: 'blur' },
+          { min: 6, max: 15, message: '长度在 5 到 7 个字符', trigger: 'blur' }
+        ],
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          { min: 6, max: 15, message: '长度在 3 到 5 个字符', trigger: 'blur' }
         ]
       }
+    }
+  },
+  methods: {
+    loginto () {
+      this.$refs.FormRef.validate(async (vaild) => {
+        if (vaild) {
+          const { account: { id } } = await this.$get('/login/cellphone', { phone: 17770093437, password: 'perfume520' })
+          window.sessionStorage.setItem('token', id)
+          this.$message.success('登陆成功')
+          this.$router.push('/home')
+        } else {
+          this.$message.error('账号或密码错误')
+          return false
+        }
+      })
+      // this.$refs[formName].validate((valid) => {
+      //   if (valid) {
+      //     alert('submit!')
+      //   } else {
+      //     console.log('error submit!!')
+      //     return false
+      //   }
+      // })
     }
   }
 }

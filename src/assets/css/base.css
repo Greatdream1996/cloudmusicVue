@@ -14,3 +14,7 @@ body {
 a {
   text-decoration: none;
 }
+
+.el-row {
+  height: 100%;
+}

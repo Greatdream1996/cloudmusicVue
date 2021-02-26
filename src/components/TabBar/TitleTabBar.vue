@@ -5,11 +5,9 @@
       <GoBack />
       <Search />
     </div>
-
   </div>
 
 </template>
-
 <script>
 import Logo from '@/components/TabBar/Logo'
 import GoBack from '@/components/common/GoBack'
@@ -26,6 +24,7 @@ export default {
 <style lang="less">
 .Bar {
   display: flex;
+  flex: 1;
   justify-content: space-between;
 }
 .BarRight{

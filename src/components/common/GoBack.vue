@@ -1,16 +1,33 @@
 <template>
   <div class="goback">
-    <el-button icon="el-icon-back" circle></el-button>
-    <el-button icon="el-icon-right" circle></el-button>
+    <el-button
+      @click="black"
+      icon="el-icon-back"
+      circle
+    ></el-button>
+    <el-button
+      @click="force"
+      icon="el-icon-right"
+      circle
+    ></el-button>
   </div>
 </template>
 <script>
-export default {}
+export default {
+  methods: {
+    black () {
+      this.$router.back()
+    },
+    force () {
+      this.$router.go(1)
+    }
+  }
+}
 </script>
 
 <style lang="less">
-.goback{
-  .el-button{
+.goback {
+  .el-button {
     padding: 0;
     width: 26px;
     height: 26px;
@@ -19,5 +36,4 @@ export default {}
     color: #fff;
   }
 }
-
 </style>>

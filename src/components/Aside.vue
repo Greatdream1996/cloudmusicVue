@@ -1,6 +1,5 @@
 <template>
   <div class="aside">
-    <h3 class="title">发现音乐</h3>
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
@@ -19,10 +18,11 @@ export default {
   data () {
     return {
       title: [
-        { name: '视频', url: '/video' },
-        { name: '朋友', url: '/firend' },
-        { name: '直播', url: '/live' },
-        { name: '私人FM', url: '/privateFm' }
+        { name: '发现音乐', url: 'discover' },
+        { name: '视频', url: 'video' },
+        { name: '朋友', url: 'firend' },
+        { name: '直播', url: 'live' },
+        { name: '私人FM', url: 'privateFm' }
       ]
     }
   }

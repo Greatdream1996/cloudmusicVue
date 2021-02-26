@@ -1,36 +1,56 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Home from '@/views/Home'
 import Video from '@/views/DiscoverMusic/Video'
 import Firend from '@/views/DiscoverMusic/Firend'
 import Live from '@/views/DiscoverMusic/Live'
 import PrivateFm from '@/views/DiscoverMusic/PrivateFm'
+import Discover from '@/views/DiscoverMusic/Discover'
+import Login from '@/components/common/Login'
 
 Vue.use(VueRouter)
 
 const routes = [{
   path: '/',
-  name: 'Video',
-  component: Video
+  redirect: '/login'
 },
 {
-  path: '/video',
-  name: 'Video',
-  component: Video
+  path: '/login',
+  name: 'Login',
+  component: Login
 },
 {
-  path: '/firend',
-  name: 'Firend',
-  component: Firend
-},
-{
-  path: '/live',
-  name: 'Live',
-  component: Live
-},
-{
-  path: '/privateFm',
-  name: 'PrivateFm',
-  component: PrivateFm
+  path: '/home',
+  name: 'Home',
+  component: Home,
+  redirect: 'home/discover',
+  children: [
+    {
+      path: 'video',
+      name: 'Video',
+      component: Video
+    },
+    {
+      path: 'discover',
+      name: 'Discover',
+      component: Discover
+    },
+    {
+      path: 'firend',
+      name: 'Firend',
+      component: Firend
+    },
+    {
+      path: 'live',
+      name: 'Live',
+      component: Live
+    },
+    {
+      path: 'privateFm',
+      name: 'PrivateFm',
+      component: PrivateFm
+    }
+  ]
 }
 ]
 const router = new VueRouter({

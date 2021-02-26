@@ -14,11 +14,20 @@ import {
   Menu,
   MenuItem,
   Form,
-  FormItem
+  FormItem,
+  Message,
+  Tabs,
+  TabPane,
+  Carousel,
+  CarouselItem
 } from 'element-ui'
-Vue.use(Button)
+Vue.use(Carousel)
+Vue.use(CarouselItem)
 Vue.use(Select)
 Vue.use(Container)
+Vue.use(Button)
+Vue.use(Tabs)
+Vue.use(TabPane)
 Vue.use(Footer)
 Vue.use(Header)
 Vue.use(Aside)
@@ -31,3 +40,5 @@ Vue.use(Menu)
 Vue.use(MenuItem)
 Vue.use(Form)
 Vue.use(FormItem)
+
+Vue.prototype.$message = Message
