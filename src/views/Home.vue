@@ -57,6 +57,7 @@ export default {
 }
 .body {
   height: 535px;
+  overflow: hidden;
 }
 
 .el-container {
@@ -84,9 +85,26 @@ export default {
 
 .el-main {
   color: #333;
-  text-align: center;
+  // text-align: center;
   padding:10px 15px
 }
+.el-main::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width : 5px;  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+  }
+.el-main::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  box-shadow   : inset 0 0 5px rgba(192, 192, 192, 0.2);
+  background   : @themered;
+  }
+.el-main::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow   : inset 0 0 5px rgba(214, 214, 214, 0.2);
+  border-radius: 10px;
+  background   : #ededed;
+  }
 .el-container:nth-child(5) .el-aside,
 .el-container:nth-child(6) .el-aside {
   line-height: 260px;

@@ -13,8 +13,16 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 .el-row {
   height: 100%;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

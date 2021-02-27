@@ -64,6 +64,7 @@ export default {
     }
   },
   methods: {
+    // 点击登陆方法验证表单正确发送请求
     loginto () {
       this.$refs.FormRef.validate(async (vaild) => {
         if (vaild) {
@@ -76,14 +77,6 @@ export default {
           return false
         }
       })
-      // this.$refs[formName].validate((valid) => {
-      //   if (valid) {
-      //     alert('submit!')
-      //   } else {
-      //     console.log('error submit!!')
-      //     return false
-      //   }
-      // })
     }
   }
 }

@@ -9,7 +9,8 @@
         name="first"
       >
         <Swiper :banner="this.banner"/>
-        <SongSheet/>
+        <h3 class="listTitle">推荐歌单</h3>
+        <SongSheet :songlist="this.songlist" />
       </el-tab-pane>
       <el-tab-pane
         label="歌单"
@@ -24,38 +25,52 @@
         name="fourth"
       >定时任务补偿</el-tab-pane>
     </el-tabs>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Swiper from '@/components/common/Swiper'
+import SongSheet from '@/components/common/SongSheet'
 export default {
   mounted: function () {
     this.getBanner()
+    this.getRecommendList()
   },
   data () {
     return {
       activeName: 'first',
-      banner: []
+      banner: [],
+      songlist: []
     }
   },
   methods: {
+    // tap点击处理函数
     handleClick (tab, event) {
-      console.log(tab, event)
     },
+    // 获取轮播图数据
     async getBanner () {
       const { banners } = await this.$get('/banner', 0)
       const newbanners = banners.map((item) => { return item.imageUrl })
       this.banner = newbanners
+    },
+    async getRecommendList () {
+      const { result } = await this.$get('/personalized', { limit: 10 })
+      this.songlist = result
     }
   },
   components: {
-    Swiper
+    Swiper,
+    SongSheet
   }
 }
 </script>
 
 <style lang="less">
+.listTitle{
+  text-align: left;
+  padding-bottom: 15px;
+}
 .el-tabs__active-bar {
   background-color: #f54058;
 }

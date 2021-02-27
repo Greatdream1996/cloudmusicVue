@@ -3,6 +3,7 @@
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
+      router
     >
     <router-link :to="item.url" v-for="item in title" :key="item.name">
       <el-menu-item  >
@@ -18,11 +19,11 @@ export default {
   data () {
     return {
       title: [
-        { name: '发现音乐', url: 'discover' },
-        { name: '视频', url: 'video' },
-        { name: '朋友', url: 'firend' },
-        { name: '直播', url: 'live' },
-        { name: '私人FM', url: 'privateFm' }
+        { name: '发现音乐', url: '/discover' },
+        { name: '视频', url: '/video' },
+        { name: '朋友', url: '/firend' },
+        { name: '直播', url: '/live' },
+        { name: '私人FM', url: '/privateFm' }
       ]
     }
   }

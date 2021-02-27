@@ -7,6 +7,7 @@ import Live from '@/views/DiscoverMusic/Live'
 import PrivateFm from '@/views/DiscoverMusic/PrivateFm'
 import Discover from '@/views/DiscoverMusic/Discover'
 import Login from '@/components/common/Login'
+import Songdetails from '@/views/Page/Songdetails'
 
 Vue.use(VueRouter)
 
@@ -23,32 +24,37 @@ const routes = [{
   path: '/home',
   name: 'Home',
   component: Home,
-  redirect: 'home/discover',
+  redirect: '/discover',
   children: [
     {
-      path: 'video',
+      path: '/video',
       name: 'Video',
       component: Video
     },
     {
-      path: 'discover',
+      path: '/discover',
       name: 'Discover',
       component: Discover
     },
     {
-      path: 'firend',
+      path: '/firend',
       name: 'Firend',
       component: Firend
     },
     {
-      path: 'live',
+      path: '/live',
       name: 'Live',
       component: Live
     },
     {
-      path: 'privateFm',
+      path: '/privateFm',
       name: 'PrivateFm',
       component: PrivateFm
+    },
+    {
+      path: '/songdetails/:id',
+      name: 'Songdetails',
+      component: Songdetails
     }
   ]
 }

@@ -1,6 +1,6 @@
 <template>
   <el-carousel
-    :interval="4000"
+    :interval="3000"
     type="card"
     height="200px"
   >
